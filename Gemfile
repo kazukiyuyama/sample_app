@@ -1,5 +1,10 @@
 source 'https://rubygems.org'
 
+group :development do
+  gem 'better_errors' # Better Errors本体
+  gem 'binding_of_caller' # Better Errors上でREPLを使用するためのgem
+end
+
 group :production do
   gem 'rails_12factor', '0.0.2'
 end
@@ -32,13 +37,17 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use ActiveModel has_secure_password
-# gem 'bcrypt', '~> 3.1.7'
+gem 'bcrypt', '~> 3.1.7'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+group :test do
+	gem 'factory_girl_rails', '4.2.1'
+end
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
